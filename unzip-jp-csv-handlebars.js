@@ -4,7 +4,10 @@
 var request = require("request");
 var fs = require("fs");
 var zlib = require("zlib");
+// Werkt nog niet, heeft native conmpilatie nodig.
 //var Iconv = require("iconv").Iconv;
+// Ondersteund EUC-JP niet
+//var iconv = require("iconv-lite");
 var csv = require("csv-streamify");
 var Handlebars = require("handlebars");
 var es = require("event-stream");
