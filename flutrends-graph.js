@@ -21,7 +21,11 @@ app.use(express.bodyParser());
 app.get('/', function (req, res) {
 // http://mango-is.com/blog/engineering/pre-render-d3-js-charts-at-server-side.html
     // return stream from flutable
-//    flutable.html(req, res);
+    flutable.html(req, res);
+    console.log(res);
+    res.on('data', function (chunk) {
+        console.log('BODY: ' + chunk);
+      });
     var htmlStub = '<html><head></head><body><div id="dataviz-container"></div><script src="js/d3.v3.min.js"></script></body></html>';
     // pass the html stub to jsDom
     jsdom.env({ features : { QuerySelector : true }, html : htmlStub, done : function (errors, window) {
