@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 // http://mango-is.com/blog/engineering/pre-render-d3-js-charts-at-server-side.html
     // return stream from flutable
     flutable.html(req, res);
-    console.log(res);
+//    console.log(res);
     res.on('data', function (chunk) {
         console.log('BODY: ' + chunk);
       });
